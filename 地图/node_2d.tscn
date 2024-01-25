@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://dae8sy0jfdxuu"]
+
+[ext_resource type="Texture2D" uid="uid://2hsfx0i0l0rf" path="res://separator.png" id="1_krrlf"]
+[ext_resource type="Script" path="res://地图/Area2D.gd" id="2_2snoy"]
+[ext_resource type="PackedScene" uid="uid://w1fnlde1smpt" path="res://小球/area_2d.tscn" id="3_v1fjx"]
+[ext_resource type="Script" path="res://地图/Area2D4.gd" id="4_xd2nr"]
+[ext_resource type="PackedScene" uid="uid://b8qgbarru6eu4" path="res://积分场景/node.tscn" id="5_h23go"]
+[ext_resource type="PackedScene" uid="uid://bvkg5np3f8jia" path="res://玩家/玩家1/area_2d.tscn" id="6_sxdff"]
+[ext_resource type="PackedScene" uid="uid://gqwru6e7ym8k" path="res://玩家/area_2d.tscn" id="7_ja0d7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwe2h"]
+size = Vector2(21, 666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0i4"]
+size = Vector2(1171, 24)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 0)
+scale = Vector2(1, 0.28)
+texture = ExtResource("1_krrlf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 510.714)
+texture = ExtResource("1_krrlf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 1032.14)
+texture = ExtResource("1_krrlf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 1546.43)
+texture = ExtResource("1_krrlf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 2060.71)
+texture = ExtResource("1_krrlf")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_2snoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 323)
+shape = SubResource("RectangleShape2D_fwe2h")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("2_2snoy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1150, 322)
+shape = SubResource("RectangleShape2D_fwe2h")
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(-5, 1)
+script = ExtResource("4_xd2nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(578.5, 2)
+shape = SubResource("RectangleShape2D_hh0i4")
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2(9, 662)
+script = ExtResource("4_xd2nr")
+y = -5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(578.5, 2)
+shape = SubResource("RectangleShape2D_hh0i4")
+
+[node name="Node" parent="." instance=ExtResource("5_h23go")]
+
+[node name="Area2D3" parent="." instance=ExtResource("3_v1fjx")]
+position = Vector2(578, 348)
+scale = Vector2(1.53, 1.53)
+
+[node name="Area2D6" parent="." instance=ExtResource("6_sxdff")]
+position = Vector2(76, 329)
+scale = Vector2(1, 2.16)
+
+[node name="Area2D7" parent="." instance=ExtResource("7_ja0d7")]
+position = Vector2(1076, 318)
+scale = Vector2(0.99587, 1.98373)
